@@ -1,7 +1,5 @@
 const astring = require('astring')
 
-console.log('astring', typeof astring)
-
 const generator = Object.assign({
   // <div></div>
   JSXElement: function JSXElement(node, state) {

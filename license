@@ -1,16 +1,8 @@
-# astring-jsx
+Fork of astring-jsx
 
-This module wraps [astring](https://www.npmjs.com/package/astring) to provide
-support for JSX syntax.
+Copyright (c) 2016 Stephen Belanger
 
-# Docs
-
-see: [astring](https://www.npmjs.com/package/astring)
-
----
-
-### Copyright (c) 2016 Stephen Belanger
-#### Licensed under MIT License
+MIT License
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
