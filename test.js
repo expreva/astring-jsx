@@ -1,33 +1,38 @@
-var acorn = require('acorn-jsx');
-var assert = require('assert');
-var extend = require('xtend');
-var astring = require('./');
-var fs = require('fs');
+const acorn = require('acorn')
+const acornJsx = require('acorn-jsx')
+const assert = require('assert')
+const astring = require('./index')
+const fs = require('fs')
 
-var tap = require('tap');
+const tap = require('tap')
+
+const extend = Object.assign
 
 // Load text and build AST
-var text = fs.readFileSync('sample.jsx').toString();
-var ast = acorn.parse(text, { plugins: { jsx: true } });
+const text = fs.readFileSync('sample.jsx').toString()
+const parser = acorn.Parser.extend(acornJsx())
+const ast = parser.parse(text, {
+  ecmaVersion: '2020',
+})
 
 tap.test('supports all JSX features', function (t) {
-  t.plan(1);
-  var processed = astring(ast, { indent: '  ' });
-  t.equal(text, processed, 'original and processed text should be equal');
-});
+  t.plan(1)
+  const processed = astring(ast, { indent: '  ' })
+  t.equal(text, processed, 'original and processed text should be equal')
+})
 
 tap.test('supports custom generator', function (t) {
-  t.plan(1);
-  
-  var generator = extend({}, astring.generator, {
+  t.plan(1)
+
+  const generator = extend({}, astring.generator, {
     ClassDeclaration: function ClassDeclaration(node, state) {
-      t.equal(node.id.name, 'Test', 'should support custom generators');
-      astring.generator.ClassDeclaration(node, state);
+      t.equal(node.id.name, 'Test', 'should support custom generators')
+      astring.generator.ClassDeclaration(node, state)
     }
-  });
-  
-  var processed = astring(ast, {
-    generator: generator,
+  })
+
+  const processed = astring(ast, {
+    generator,
     indent: '  '
-  });
-});
+  })
+})
