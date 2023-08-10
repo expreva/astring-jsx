@@ -4,7 +4,8 @@
   "description": "Add JSX support to astring",
   "main": "index.js",
   "scripts": {
-    "test": "tap test.js"
+    "test": "tap test.js",
+    "release": "npm publish --access public"
   },
   "author": "",
   "license": "MIT",
