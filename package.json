@@ -1,12 +1,12 @@
 {
   "name": "astring-jsx",
-  "version": "1.0.1",
-  "description": "astring, with JSX support",
+  "version": "1.0.2",
+  "description": "Add JSX support to astring",
   "main": "index.js",
   "scripts": {
     "test": "tap test.js"
   },
-  "author": "Stephen Belanger <admin@stephenbelanger.com>",
+  "author": "",
   "license": "MIT",
   "dependencies": {
     "astring": "^1.8.6"
@@ -18,10 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Qard/astring-jsx.git"
+    "url": "git+https://github.com/expreva/astring-jsx.git"
   },
-  "bugs": {
-    "url": "https://github.com/Qard/astring-jsx/issues"
-  },
-  "homepage": "https://github.com/Qard/astring-jsx#readme"
+  "homepage": "https://github.com/expreva/astring-jsx#readme"
 }
